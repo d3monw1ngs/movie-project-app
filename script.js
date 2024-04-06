@@ -231,11 +231,12 @@ function showMovies(data) {
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
 
-          
         `
         main.appendChild(movieEl);
     })
 }
+
+
 
 function getColor(vote) {
     if(vote >= 8) {
