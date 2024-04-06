@@ -65,5 +65,4 @@ form.addEventListener('submit', (e) => {
     }else{
         getMovies(API_URL);
     }
-
 })
