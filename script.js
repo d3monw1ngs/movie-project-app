@@ -231,12 +231,7 @@ function showMovies(data) {
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
 
-            <div class="overview">
-                
-                <h3>Overview</h3>
-                ${overview}
-
-            </div>
+          
         `
         main.appendChild(movieEl);
     })
