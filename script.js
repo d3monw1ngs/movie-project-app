@@ -13,8 +13,7 @@ const options = {
         primary_release_year: "",
         page: 1,
         region: "",
-        year: "",
-       
+        year: "", 
     }
 }
 
