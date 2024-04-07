@@ -23,6 +23,13 @@ header{
     background-color: var(--secondary-color);
 }
 
+h1 {
+    color: whitesmoke;
+    font-family: inherit;
+    margin-right: 700px;
+}
+
+
 .search{
     background-color: transparent;
     border: 2px solid var(--primary-color);
