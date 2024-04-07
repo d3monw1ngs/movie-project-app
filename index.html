@@ -24,26 +24,28 @@
     </div>
 
     <!-- Modal Section -->
-   <div class="container">
-        <div class="poster"><img/></div>
-        <div class="movie-info-wrapper">
-            <ul class="movie-info-list">
-                <li>v</li>
-                <li>v</li>
-                <li>v</li>
-                <li>v</li>
-            </ul>
-            <div class="movie-info-about">
-                <h3> ABOUT </h3>
-                    <p>summary...</p>
+   <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modal-poster" src="" alt="title">
+                <div id="modal-details">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-vote"></p>
+                    <p id="modal-popularity"></p>
+                    <p id="modal-original-title"></p>
+                    <p id="modal-genre"></p>
+                    <h3>About</h3>
+                    <p id="modal-overview"></p>
+                </div>
             </div>
-            <div class="buttons">
-                <button>ADD TO WATCHED</button>
-                <button>ADD TO QUEU</button>
+            <div class="modal-footer">
+                <button id="addToWatchedBtn">Add to Watched</button>
+                <button id="addToQueuBtn">Add to Queu</button>
             </div>
         </div>
-   </div>
-    
+    </div>
+
     <script src="script.js" type="module"></script>
 </body>
 </html>
