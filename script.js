@@ -223,12 +223,12 @@ function showMovies(data) {
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
-            <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1500"}" 
+            <img class="poster" src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1500"}" 
             alt="${title}">
 
             <div class="movie-info">
                 <h3>${title}</h3>
-                <span class="${getColor(vote_average)}">${vote_average}</span>
+                <span class="${vote_average}">${vote_average}</span>
             </div>
 
         `
@@ -238,15 +238,15 @@ function showMovies(data) {
 
 
 
-function getColor(vote) {
-    if(vote >= 8) {
-        return "green"
-    }else if (vote >= 5) {
-        return "orange"
-    }else{
-        return "red"
-    }
-}
+// function getColor(vote) {
+//     if(vote >= 8) {
+//         return "green"
+//     }else if (vote >= 5) {
+//         return "orange"
+//     }else{
+//         return "red"
+//     }
+// }
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -294,56 +294,73 @@ function pageCall(page) {
 }
 
 // MODAL SECTION
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('myModal');
-    const modalPoster = document.getElementById('modal-poster');
-    const modalTitle = document.getElementById('modal-title');
-    const modalVote = document.getElementById('modal-vote');
-    const modalPopularity = document.getElementById('modal-popularity');
-    const modalOrigTitle = document.getElementById('modal-original-title');
-    const modalGenre = document.getElementById('modal-genre');
-    const modalOverview = document.getElementById('modal-overview');
-    const addToWatchedBtn = document.getElementById('addToWatchedBtn');
-    const addToQueuBtn = document.getElementById('addToQueuBtn');
-    const closeBtn = document.getElementsByClassName('close')[0];
-
-    // function to open the modal with movie details
-    function openModal(movie) {
-        modalPoster.src = movie.poster_path;
-        modalTitle.textContent = movie.title;
-        modalVote.textContent = movie.vote_average;
-        modalPopularity.textContent = movie.popularity;
-        modalOrigTitle.textContent = movie.original_title;
-        modalGenre.textContent = movie.genre;
-        modalOverview.textContent = movie.overview;
-        modal.style.display = "block";
-    }
 
 
-    // function to close the modal
-    function closeModal() {
-        modal.style.display = "none";
-    }
 
-    // event listener for the close button
-    closeBtn.addEventListener('click', closeModal);
 
-    // event listener for clicks outside the modal
-    window.addEventListener('click', function(event) {
-        if(event.target === modal) {
-            closeModal();
-        }
-    });
 
-    // event listener for the "Add to Watched" button
-    addToWatchedBtn.addEventListener('click', function() {
-        console.log("Movie added to Watched list");
-        closeModal();
-    });
 
-    // event listener for the "Add to Queu" button
-    addToQueuBtn.addEventListener('click', function() {
-        console.log("Movie added to Queu");
-        closeModal();
-    });
-});
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const modal = document.getElementById('myModal');
+//     const modalPoster = document.getElementById('modal-poster');
+//     const modalTitle = document.getElementById('modal-title');
+//     const modalVote = document.getElementById('modal-vote');
+//     const modalPopularity = document.getElementById('modal-popularity');
+//     const modalOrigTitle = document.getElementById('modal-original-title');
+//     const modalGenre = document.getElementById('modal-genre');
+//     const modalOverview = document.getElementById('modal-overview');
+//     const addToWatchedBtn = document.getElementById('addToWatchedBtn');
+//     const addToQueuBtn = document.getElementById('addToQueuBtn');
+//     const closeBtn = document.getElementsByClassName('close')[0];
+
+//     // function to open the modal with movie details
+//     function openModal(movie) {
+//         modalPoster.src = movie.poster_path;
+//         modalTitle.textContent = movie.title;
+//         modalVote.textContent = movie.vote_average;
+//         modalPopularity.textContent = movie.popularity;
+//         modalOrigTitle.textContent = movie.original_title;
+//         modalGenre.textContent = movie.genre;
+//         modalOverview.textContent = movie.overview;
+//         modal.style.display = "block";
+//     }
+
+
+//     // function to close the modal
+//     function closeModal() {
+//         modal.style.display = "none";
+//     }
+
+//     // event listener for the close button
+//     closeBtn.addEventListener('click', closeModal);
+
+//     // event listener for clicks outside the modal
+//     window.addEventListener('click', function(event) {
+//         if(event.target === modal) {
+//             closeModal();
+//         }
+//     });
+
+//     // event listener for the "Add to Watched" button
+//     addToWatchedBtn.addEventListener('click', function() {
+//         console.log("Movie added to Watched list");
+//         closeModal();
+//     });
+
+//     // event listener for the "Add to Queu" button
+//     addToQueuBtn.addEventListener('click', function() {
+//         console.log("Movie added to Queu");
+//         closeModal();
+//     });
+// });
