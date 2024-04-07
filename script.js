@@ -188,6 +188,7 @@ function getMovies(url) {
     lastUrl = url;    
     fetch(url).then(res => res.json()).then(data => {
        console.log(data.results)
+     
        if(data.results.length !== 0){
             showMovies(data.results);
             currentPage = data.page;
@@ -228,7 +229,9 @@ function showMovies(data) {
 
             <div class="movie-info">
                 <h3>${title}</h3>
-                <span class="${vote_average}">${vote_average}</span>
+               
+               
+                <span class="green">${vote_average}</span>
             </div>
 
         `
@@ -238,10 +241,10 @@ function showMovies(data) {
 
 
 
-// function getColor(vote) {
-//     if(vote >= 8) {
+// function getColor(vote_average) {
+//     if(vote_average >= 8) {
 //         return "green"
-//     }else if (vote >= 5) {
+//     }else if (vote_average >= 5) {
 //         return "orange"
 //     }else{
 //         return "red"
