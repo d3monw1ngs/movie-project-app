@@ -113,72 +113,72 @@ var lastUrl = '';
 var totalPages = 100;
 
 
-// GENRE SECTION
-var selectedGenre = []
-setGenre();
-function setGenre() {
-    tagsEl.innerHTML = '';
-    genre.forEach(genre => {
-        const t = document.createElement('div');
-        t.classList.add('tag');
-        t.id=genre.id;
-        t.innerText = genre.name;
-        t.addEventListener('click', () => {
-            if(selectedGenre.length == 0){
-                selectedGenre.push(genre.id);
-            }else {
-                if(selectedGenre.includes(genre.id)){
-                    selectedGenre.forEach((id, idx) => {
-                        if(id == genre.id){
-                            selectedGenre.splice(idx, 1);
-                        }
-                    })
-                }else {
-                    selectedGenre.push(genre.id);
-                }
-            }
-                console.log(selectedGenre)
-                getMovies(API_URL + '&with_genres=' + encodeURI(selectedGenre.
-                    join(',')))
-                highlightSelection()
-        })
-        tagsEl.append(t);
-    })
-}
+// // GENRE SECTION
+// var selectedGenre = []
+// setGenre();
+// function setGenre() {
+//     tagsEl.innerHTML = '';
+//     genre.forEach(genre => {
+//         const t = document.createElement('div');
+//         t.classList.add('tag');
+//         t.id=genre.id;
+//         t.innerText = genre.name;
+//         t.addEventListener('click', () => {
+//             if(selectedGenre.length == 0){
+//                 selectedGenre.push(genre.id);
+//             }else {
+//                 if(selectedGenre.includes(genre.id)){
+//                     selectedGenre.forEach((id, idx) => {
+//                         if(id == genre.id){
+//                             selectedGenre.splice(idx, 1);
+//                         }
+//                     })
+//                 }else {
+//                     selectedGenre.push(genre.id);
+//                 }
+//             }
+//                 console.log(selectedGenre)
+//                 getMovies(API_URL + '&with_genres=' + encodeURI(selectedGenre.
+//                     join(',')))
+//                 highlightSelection()
+//         })
+//         tagsEl.append(t);
+//     })
+// }
 
-// Selecting Genres
-function highlightSelection() {
-    const tags = document.querySelectorAll('.tag');
-    tags.forEach(tag => {
-        tag.classList.remove('highlight');
-    })
-    clearBtn();
-    if(selectedGenre.length != 0) {
-        selectedGenre.forEach(id => {
-            const highlightedTag = document.getElementById(id);
-            highlightedTag.classList.add('highlight');
-        })
-    }     
-}
+// // Selecting Genres
+// function highlightSelection() {
+//     const tags = document.querySelectorAll('.tag');
+//     tags.forEach(tag => {
+//         tag.classList.remove('highlight');
+//     })
+//     clearBtn();
+//     if(selectedGenre.length != 0) {
+//         selectedGenre.forEach(id => {
+//             const highlightedTag = document.getElementById(id);
+//             highlightedTag.classList.add('highlight');
+//         })
+//     }     
+// }
 
-// Clearing Genre Selection
-function clearBtn() {
-    let clearBtn = document.getElementById('clear');
-    if(clearBtn){
-        clearBtn.classList.add('highlight')
-    }else {
-        let clear = document.createElement('div');
-        clear.classList.add('tag', 'highlight');
-        clear.id = 'clear';
-        clear.innerText = 'CLEAR x';
-        clear.addEventListener('click', () => {
-            selectedGenre = [];
-            setGenre();
-            getMovies(API_URL);
-        })
-        tagsEl.append(clear);
-    }
-}
+// // Clearing Genre Selection
+// function clearBtn() {
+//     let clearBtn = document.getElementById('clear');
+//     if(clearBtn){
+//         clearBtn.classList.add('highlight')
+//     }else {
+//         let clear = document.createElement('div');
+//         clear.classList.add('tag', 'highlight');
+//         clear.id = 'clear';
+//         clear.innerText = 'CLEAR x';
+//         clear.addEventListener('click', () => {
+//             selectedGenre = [];
+//             setGenre();
+//             getMovies(API_URL);
+//         })
+//         tagsEl.append(clear);
+//     }
+// }
 
 
 getMovies(API_URL);
