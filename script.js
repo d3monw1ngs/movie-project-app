@@ -317,7 +317,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modalGenre.textContent = movie.genre;
         modalOverview.textContent = movie.overview;
         modal.style.display = "block";
-        alert()
     }
 
 
