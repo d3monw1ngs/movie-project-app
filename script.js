@@ -96,6 +96,7 @@ const genre = [
     }
   ]
 
+  // MODAL SECTION
   const modal = document.getElementById('myModal');
   const modalPoster = document.getElementById('modal-poster');
   const modalTitle = document.getElementById('modal-title');
@@ -281,6 +282,7 @@ function showMovies(data) {
 
             <div class="movie-info">
                 <h3>${title}</h3>
+                <p></p>
                 
                 <span class="green">${vote_average}</span>
             </div>
