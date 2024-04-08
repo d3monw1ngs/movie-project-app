@@ -84,23 +84,16 @@ main{
 }
 
 .movie-info span{
-    background-color: var(--primary-color);
+    background-color: orange;
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
     font-weight: bold;
 }
 
 .movie-info span.green{
-    color: lightgreen;
+    color: white;
 }
 
-.movie-info span.green{
-    color: orange;
-}
-
-.movie-info span.green{
-    color: red;
-}
 
 /* .overview{
     position: absolute;
@@ -174,7 +167,7 @@ main{
 
 /* Modal Styles */
 .modal {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -191,7 +184,7 @@ main{
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .close {
@@ -213,8 +206,8 @@ main{
 }
 
 #modal-poster {
-    width: auto;
-    height: 300px;
+    width: 300px;
+    height: auto;
     margin-right: 20px;
 }
 
@@ -222,7 +215,27 @@ main{
     flex-grow: 1;
 }
 
-.modal-footer {
+
+.modal-buttons {
     margin-top: 20px;
-    text-align: right;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#addToWatchedBtn,
+#addToQueuBtn {
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border: 2px solid grey;
+    border-radius: 25px;
+}
+
+#addToWatchedBtn:hover,
+#addToQueuBtn:hover {
+    background-color: #FF6B01;
+    color: white;
+    
 }
