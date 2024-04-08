@@ -67,6 +67,7 @@ main{
 
 .movie img{
     width: 100%;
+    cursor: pointer;
 }
 
 .movie-info{
