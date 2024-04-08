@@ -96,6 +96,58 @@ const genre = [
     }
   ]
 
+  const modal = document.getElementById('myModal');
+  const modalPoster = document.getElementById('modal-poster');
+  const modalTitle = document.getElementById('modal-title');
+  const modalVote = document.getElementById('modal-vote');
+  const modalPopularity = document.getElementById('modal-popularity');
+  const modalOrigTitle = document.getElementById('modal-original-title');
+  const modalGenre = document.getElementById('modal-genre');
+  const modalOverview = document.getElementById('modal-overview');
+  const addToWatchedBtn = document.getElementById('addToWatchedBtn');
+  const addToQueuBtn = document.getElementById('addToQueuBtn');
+  const closeBtn = document.getElementsByClassName('close')[0];
+
+  // function to open the modal with movie details
+  function openModal(movie) {
+      modalPoster.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+      modalTitle.textContent = movie.title;
+      modalVote.textContent = movie.vote_average+'/'+movie.vote_count;
+      modalPopularity.textContent = movie.popularity;
+      modalOrigTitle.textContent = movie.original_title;
+      modalGenre.textContent = movie.genre;
+      modalOverview.textContent = movie.overview;
+      modal.style.display = "block";
+  }
+
+  // function to close the modal
+  function closeModal() {
+      modal.style.display = "none";
+  }
+
+  // event listener for the close button
+  closeBtn.addEventListener('click', closeModal);
+
+  // event listener for clicks outside the modal
+  window.addEventListener('click', function(event) {
+      if(event.target === modal) {
+          closeModal();
+      }
+  });
+
+  // event listener for the "Add to Watched" button
+  addToWatchedBtn.addEventListener('click', function() {
+      console.log("Movie added to Watched list");
+      closeModal();
+  });
+
+  // event listener for the "Add to Queu" button
+  addToQueuBtn.addEventListener('click', function() {
+      console.log("Movie added to Queu");
+      closeModal();
+  });
+
+
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
@@ -229,12 +281,12 @@ function showMovies(data) {
 
             <div class="movie-info">
                 <h3>${title}</h3>
-               
-               
+                
                 <span class="green">${vote_average}</span>
             </div>
 
         `
+        movieEl.addEventListener('click', function() {openModal(movie)});
         main.appendChild(movieEl);
     })
 }
@@ -314,56 +366,5 @@ function pageCall(page) {
 
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const modal = document.getElementById('myModal');
-//     const modalPoster = document.getElementById('modal-poster');
-//     const modalTitle = document.getElementById('modal-title');
-//     const modalVote = document.getElementById('modal-vote');
-//     const modalPopularity = document.getElementById('modal-popularity');
-//     const modalOrigTitle = document.getElementById('modal-original-title');
-//     const modalGenre = document.getElementById('modal-genre');
-//     const modalOverview = document.getElementById('modal-overview');
-//     const addToWatchedBtn = document.getElementById('addToWatchedBtn');
-//     const addToQueuBtn = document.getElementById('addToQueuBtn');
-//     const closeBtn = document.getElementsByClassName('close')[0];
 
-//     // function to open the modal with movie details
-//     function openModal(movie) {
-//         modalPoster.src = movie.poster_path;
-//         modalTitle.textContent = movie.title;
-//         modalVote.textContent = movie.vote_average;
-//         modalPopularity.textContent = movie.popularity;
-//         modalOrigTitle.textContent = movie.original_title;
-//         modalGenre.textContent = movie.genre;
-//         modalOverview.textContent = movie.overview;
-//         modal.style.display = "block";
-//     }
-
-
-//     // function to close the modal
-//     function closeModal() {
-//         modal.style.display = "none";
-//     }
-
-//     // event listener for the close button
-//     closeBtn.addEventListener('click', closeModal);
-
-//     // event listener for clicks outside the modal
-//     window.addEventListener('click', function(event) {
-//         if(event.target === modal) {
-//             closeModal();
-//         }
-//     });
-
-//     // event listener for the "Add to Watched" button
-//     addToWatchedBtn.addEventListener('click', function() {
-//         console.log("Movie added to Watched list");
-//         closeModal();
-//     });
-
-//     // event listener for the "Add to Queu" button
-//     addToQueuBtn.addEventListener('click', function() {
-//         console.log("Movie added to Queu");
-//         closeModal();
-//     });
-// });
+ 

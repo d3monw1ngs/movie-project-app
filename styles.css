@@ -167,7 +167,7 @@ main{
 
 /* Modal Styles */
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -183,8 +183,8 @@ main{
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 882px;
 }
 
 .close {
