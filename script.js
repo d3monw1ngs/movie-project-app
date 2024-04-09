@@ -180,7 +180,7 @@ function getMovies(url) {
             prevPage = currentPage - 1;
             totalPages = data.total_pages;
 
-            current.innerText = currentPage;
+          li.value.innerText = currentPage;
             if(currentPage <= 1){
                 prev.classList.add('disabled');
                 next.classList.remove('disabled');
